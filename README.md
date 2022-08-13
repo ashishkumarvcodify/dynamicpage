@@ -9,6 +9,7 @@ used dynamic template
     in function, i have passed variable and in return i passed variable as mentioned in below code. Variable contains data that we will pass dynamically
    
    ### code<--
+   
    def dynamic(request):
     customer_data = {
         "customer_details":{ "id" : 1, "name" : "customer-1" },
@@ -17,12 +18,14 @@ used dynamic template
     { "user_id" : 2, "user_name" : "user-2" },]
     }
     return render(request, 'dynamic.html',{'customer_data': customer_data})
-    ### code-->
+   
+   ### code-->
     
-    ### settings.py
+   ### settings.py
     
     in settings i have passed "django.templates.context_processors". by this we can request for dynamic data in the html page
-    ### code<--
+    
+   ### code<--
     TEMPLATES = [
       { 'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['templates'],
@@ -34,7 +37,8 @@ used dynamic template
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ], }, },]
-    ### code-->
+   ### code-->
     
-    ### .html page
+   ### .html page
+   
     we will pass the variable in {{ customer_data }} and do some logic conditions in {% for i in customer_data.items %}  after conditions we can pass the data by {{ customer_data.customer_details }}
