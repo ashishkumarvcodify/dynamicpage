@@ -1,0 +1,42 @@
+
+<html>
+    
+    <body>
+        <!--{{ customer_data }}-->
+        <h1>Customer Data</h1>
+        <table style="width: 20%;border: 1px solid;text-align: center;">
+            <thead style="width: 20%;border: 1px solid;text-align: center;"></thead>
+                <tr>
+                    <th style="width: 20%;border: 1px solid;text-align: center;">customer ID</th>
+                    <th style="width: 20%;border: 1px solid;text-align: center;">customer Name</th>
+                </tr>
+            </thead>
+            
+            <tbody style="width: 20%;border: 1px solid;text-align: center;"></tbody>
+                <tr>
+                    <td style="width: 20%;border: 1px solid;text-align: center;">{{ customer_data.customer_details.id }}</td>
+                    <td style="width: 20%;border: 1px solid;text-align: center;">{{ customer_data.customer_details.name }}</td>    
+                </tr>
+                    
+            </tbody>
+                    
+        </table>
+        <h1>User Data</h1>
+        <table style="width: 20%;border: 1px solid;text-align: center;">
+            <thead style="width: 20%;border: 1px solid;text-align: center;"></thead>
+                <tr>
+                    <th style="width: 20%;border: 1px solid;text-align: center;">User ID</th>
+                    <th style="width: 20%;border: 1px solid;text-align: center;">User Name</th>
+                </tr>
+            </thead>
+            <tbody style="width: 20%;border: 1px solid;text-align: center;"></tbodystyle>
+                {% for i in customer_data.customer_users %}
+                <tr>
+                    <td style="width: 20%;border: 1px solid;text-align: center;">{{i.user_id}}</td>
+                    <td style="width: 20%;border: 1px solid;text-align: center;">{{i.user_name}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
